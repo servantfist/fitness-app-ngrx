@@ -1,0 +1,6 @@
+{
+    "typescript.preferences.quoteStyle": "single",
+    "javascript.format.semicolons": "insert",
+    "javascript.preferences.quoteStyle": "single",
+    "lua.format.singleQuote": true
+}

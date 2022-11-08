@@ -1,0 +1,32 @@
+.new-training {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media all and (min-width: 600px){
+    #new-training-card {
+        width: 400px;
+    }
+}
+
+#new-training-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+mat-form-field,
+mat-select,
+mat-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-training-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

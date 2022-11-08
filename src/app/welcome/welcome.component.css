@@ -1,0 +1,15 @@
+@media all and (max-width: 600px) {
+    #welcome, section {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+#welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    margin-top: 30px;
+}

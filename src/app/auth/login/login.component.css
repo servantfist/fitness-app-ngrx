@@ -1,0 +1,13 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+mat-form-field {
+  width: 300px;
+}
+
