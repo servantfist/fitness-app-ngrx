@@ -1,20 +1,13 @@
 <section class="new-training">
-  <mat-card id="#new-training-card">
+  <mat-card>
     <mat-card-title>Time to start a workout!</mat-card-title>
     <mat-card-content>
       <mat-form-field class="new-training-fields">
         <mat-select placeholder="Favorite Exercise" >
-          <mat-option value="crunches">
-            Crunches
-          </mat-option>
-          <mat-option value="touch-toes">
-            Touch Toes
-          </mat-option>
-          <mat-option value="side-lunges">
-            Side Lunges
-          </mat-option>
-          <mat-option value="burpees">
-            Burpees
+          <mat-option
+            *ngFor="let exercise of availableExercises" 
+          value="exercise.name">
+            {{exercise.name}}
           </mat-option>
         </mat-select>
       </mat-form-field>

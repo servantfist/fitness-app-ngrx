@@ -9,17 +9,17 @@
   </div>
   <div id="hidden-nav" class="navbar">
     <ul id="navigation-items">
-      <li class="navigation-item">
+      <li *ngIf="!isAuth" class="navigation-item">
         <a routerLink="/signup">Signup</a>
       </li>
-      <li class="navigation-item">
+      <li *ngIf="!isAuth" class="navigation-item">
         <a routerLink="/login">Login</a>
       </li>
-      <li class="navigation-item">
+      <li *ngIf="isAuth" class="navigation-item">
         <a routerLink="/training">Training</a>
       </li>
       <li>
-        <a>Logout</a>
+        <a *ngIf="isAuth" (click)="onLogout()">Logout</a>
       </li>
     </ul>
   </div>
