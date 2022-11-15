@@ -1,14 +1,13 @@
 export interface Exercise {
     id?: number;
-    collection?: string;
+    collection?: 'core' | 'chest' | 'legs' | 'back' | 'arms' | 'full';
     name?: string;
-    status: string;
+    state?: 'completed' | 'paused' | 'not-started';
     duration?: number;
     totalDuration?: number;
-    caloriesPerSession?: 8;
+    caloriesPerSession?: number;
     totalCaloriesBurnered?: number;
     date?: Date;
-    state?: 'completed' | 'paused' | null;
     sessionsStarted?: number;
     sessionsCompleted?: number;
 }

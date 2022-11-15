@@ -18,7 +18,7 @@
       <li *ngIf="isAuth" class="navigation-item">
         <a routerLink="/training">Training</a>
       </li>
-      <li>
+      <li class="pointer">
         <a *ngIf="isAuth" (click)="onLogout()">Logout</a>
       </li>
     </ul>

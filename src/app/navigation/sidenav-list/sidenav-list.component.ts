@@ -5,7 +5,7 @@ import {
     OnInit,
     Output,
 } from '@angular/core';
-import { Subscription } from 'rxjs-compat';
+import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({

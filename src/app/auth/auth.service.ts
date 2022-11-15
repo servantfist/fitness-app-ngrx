@@ -1,9 +1,11 @@
-import { Subject } from 'rxjs-compat';
+import { Subject } from 'rxjs';
 
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { AuthData } from './auth-data.model';
 import { User } from './user.model';
-import { Router } from '@angular/router';
+
 
 @Injectable({
     providedIn: 'root',
@@ -47,7 +49,7 @@ export class AuthService {
         return this.user != null;
     }
 
-    authSuccess() {
+    private authSuccess() {
         this.authChange.next(true);
         this.router.navigate(['/training']);
     }
