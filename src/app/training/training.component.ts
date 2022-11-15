@@ -10,41 +10,18 @@ import { MatDialog } from '@angular/material/dialog';
     templateUrl: './training.component.html',
     styleUrls: ['./training.component.css'],
 })
-export class TrainingComponent implements OnInit, OnDestroy {
-    ongoingTraining = false;
-    exerciseSubscription: Subscription = new Subscription();
-    exercises: Exercise[] | null = [];
-    currentExercise: Exercise | null = null;
+export class TrainingComponent {
+
+    /*
+    We are subscribing in the template (via AsyncPipe), not in the constructor — so none of our (possibly complex) logic will be run at the component’s creation.
+    */
+    readonly currentExercise$ = this.trainingStore.getCurrentExercise();
+    readonly exercises$ = this.trainingStore.getExercises();
+    readonly ongoingTraining = this.trainingStore.getOngoingTraining();
 
     constructor(
         private dialog: MatDialog,
-        private trainingService: TrainingService
+        private trainingStore: TrainingStore
     ) {}
 
-    ngOnInit() {
-        this.getExercises();
-        this.getCurrrentExercise();
-    }
-
-    getExercises() {
-        this.exerciseSubscription =
-            this.trainingService.availableExercises$.subscribe(
-                (exercises) => (this.exercises = exercises)
-            );
-    }
-
-    getCurrentExercise() {
-        this.exerciseSubscription =
-            this.trainingService.currentExercise$.subscribe((exercise) => {
-                if (exercise) {
-                    this.ongoingTraining = true;
-                } else {
-                    this.ongoingTraining = false;
-                }
-            });
-    }
-
-    ngOnDestroy(): void {
-        throw new Error('Method not implemented.');
-    }
 }
